@@ -49,6 +49,11 @@ elasticsearch == 6.3.1
 cassandra-driver == 3.18.0  
 etcd3 == 0.10.0  
 
+**AWS specific modules**
+boto3==1.10.29
+botocore==1.13.29  
+
+
 ## Examples
 
 ### Hello Action
