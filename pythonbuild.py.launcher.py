@@ -33,7 +33,6 @@ import datetime
 import math
 
 from threading import Thread
-import sentry_sdk
 import queue
 
 q = queue.Queue()
@@ -41,7 +40,7 @@ q = queue.Queue()
 
 def worker():
     while True:
-        __report_url, __sentry_url, __action_id, execution_time, timestamp = q.get()
+        __report_url, __action_id, execution_time, timestamp = q.get()
         try:
             requests.post(
                 __report_url,
@@ -51,10 +50,8 @@ def worker():
                     "id": __action_id,
                 },
             )
+            q.task_done()
         except Exception as e:
-            sentry_sdk.init(dsn=__sentry_url)
-            sentry_sdk.captureMessage("*UbiFunction Container Node:* \n{}".format(e))
-        finally:
             q.task_done()
 
 
@@ -129,7 +126,7 @@ while True:
     # Reporter: Action name expected '/Ubidots_parsers/adapter-id'
     execution_time = math.ceil((time.time() - init_time) * 1000)
     timestamp = int(datetime.datetime.utcnow().timestamp() * 1000)
-    q.put((__report_url, __sentry_url, __action_id, execution_time, timestamp))
+    q.put((__report_url, __action_id, execution_time, timestamp))
 
     out.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
     out.write(b"\n")
