@@ -56,7 +56,6 @@ Default Python packages supported by the container
 **Crypto modules**
 cryptography==2.9.1
 
-
 ## Examples
 
 ### Hello Action
