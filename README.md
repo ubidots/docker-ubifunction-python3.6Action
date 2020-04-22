@@ -53,6 +53,8 @@ Default Python packages supported by the container
 - boto3==1.10.29
 - botocore==1.13.29
 
+**Crypto modules**
+cryptography==2.9.1
 
 ## Examples
 
