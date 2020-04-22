@@ -52,8 +52,9 @@ def worker():
                 },
             )
         except Exception as e:
-            sentry_sdk.init(dsn=__sentry_url)
-            sentry_sdk.captureMessage("*UbiFunction Container Node:* \n{}".format(e))
+            if __sentry_url is not None:
+                sentry_sdk.init(dsn=__sentry_url)
+                sentry_sdk.captureMessage("*UbiFunction Container Node:* \n{}".format(e))
         finally:
             q.task_done()
 
