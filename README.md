@@ -53,7 +53,7 @@ Default Python packages supported by the container
 - boto3==1.10.29
 - botocore==1.13.29
 
-**Google Modules
+**Google Modules**
 - google-api-core == 1.19.0
 - dialogflow == 1.0.0
 
