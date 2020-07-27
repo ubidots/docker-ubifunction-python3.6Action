@@ -39,6 +39,15 @@ import queue
 q = queue.Queue()
 
 
+def parse_to_json(value):
+    if isinstance(value, dict):
+        return value
+    try:
+        return json.loads(value)
+    except (SyntaxError, json.JSONDecodeError, TypeError):
+        return {}
+
+
 def worker():
     while True:
         __report_url, __sentry_url, __action_id, execution_time, timestamp = q.get()
@@ -107,19 +116,31 @@ while True:
     for key in args:
         if key == "value":
             payload = args["value"]
-        else:
+        elif key.upper() in ["TRANSACTION_ID", "ACTIVATION_ID", "ACTION_NAME"]:
             env["__OW_%s" % key.upper()] = args[key]
+
     res = {}
     try:
-        __action_id = os.getenv("__OW_ACTION_NAME", None).split("adapter-")[-1]
-        __report_url = payload.get("reportUrl", None)
-        __sentry_url = payload.get("sentryUrl", None)
+        __action_id = os.getenv("__OW_ACTION_NAME", "").split("adapter-")[-1]
+        __report_url = payload.pop("reportUrl", None)
+        __sentry_url = payload.pop("sentryUrl", None)
+        __environment = payload.pop("_environment", None)
+        __auth_credentials = payload.pop("_auth_credentials", {})
+        __parameters = payload.pop("_parameters", None)
 
-        if __report_url is not None:
-            payload.pop("reportUrl", None)
+        # Parse environment data and create each key as an environment variable
+        parsed_data = parse_to_json(__environment)
+        for key, value in parsed_data.items():
+            env["__{key}".format(key=key)] = value
 
-        if __sentry_url is not None:
-            payload.pop("sentryUrl", None)
+        # Create each key on auth_credentials as an environment variable
+        for key, value in __auth_credentials.items():
+            env["AUTH_CREDENTIALS_{key}".format(key=key.upper())] = value
+
+        # Parse _parameters data and sent to script as an extra key inside args
+        parsed_data = parse_to_json(__parameters)
+        if parsed_data:
+            payload.update({"parameters": parsed_data})
 
         init_time = time.time()
         res = main(payload)
