@@ -55,3 +55,6 @@ dialogflow == 1.0.0
 
 # Crypto modules
 cryptography==2.9.1
+
+# 3rd party API management
+zeep==3.4.0

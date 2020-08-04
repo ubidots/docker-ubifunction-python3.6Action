@@ -60,6 +60,9 @@ Default Python packages supported by the container
 **Crypto modules**
 - cryptography==2.9.1
 
+**3rd party API management**
+- zeep==3.4.0
+
 ## Examples
 
 ### Hello Action
