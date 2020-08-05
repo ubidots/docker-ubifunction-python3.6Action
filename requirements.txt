@@ -16,6 +16,8 @@ simplejson == 3.16.0
 virtualenv == 16.7.1
 twisted == 20.3.0
 paho-mqtt == 1.4.0
+pynt==0.8.2
+pytz==2020.1
 
 # packages for numerics
 numpy == 1.16.4
