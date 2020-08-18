@@ -19,24 +19,28 @@ ENV PROXY_SOURCE=https://github.com/apache/openwhisk-runtime-go/archive/golang1.
 RUN curl -L "$PROXY_SOURCE" | tar xzf - \
   && mkdir -p src/github.com/apache \
   && mv openwhisk-runtime-go-golang1.11-1.13.0-incubating \
-     src/github.com/apache/incubator-openwhisk-runtime-go \
+  src/github.com/apache/incubator-openwhisk-runtime-go \
   && cd src/github.com/apache/incubator-openwhisk-runtime-go/main \
   && CGO_ENABLED=0 go build -o /bin/proxy
 
 FROM python:3.6-stretch
 
+# Update packages and install mandatory dependences
+RUN apt-get update
+RUN apt-get install unixodbc-dev --yes
+
 # Install common modules for python
 RUN pip install \
-    beautifulsoup4==4.6.3 \
-    httplib2==0.11.3 \
-    kafka_python==1.4.3 \
-    lxml==4.2.5 \
-    python-dateutil==2.7.3 \
-    requests==2.19.1 \
-    scrapy==1.5.1 \
-    simplejson==3.16.0 \
-    virtualenv==16.0.0 \
-    twisted==18.7.0
+  beautifulsoup4==4.6.3 \
+  httplib2==0.11.3 \
+  kafka_python==1.4.3 \
+  lxml==4.2.5 \
+  python-dateutil==2.7.3 \
+  requests==2.19.1 \
+  scrapy==1.5.1 \
+  simplejson==3.16.0 \
+  virtualenv==16.0.0 \
+  twisted==18.7.0
 
 RUN mkdir -p /action
 WORKDIR /

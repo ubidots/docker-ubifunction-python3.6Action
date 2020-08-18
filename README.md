@@ -64,6 +64,7 @@ Default Python packages supported by the container
 
 **3rd party API management**
 - zeep==3.4.0
+- pyodbc==4.0.30
 
 ## Examples
 
