@@ -60,3 +60,4 @@ cryptography==2.9.1
 
 # 3rd party API management
 zeep==3.4.0
+pyodbc==4.0.30
