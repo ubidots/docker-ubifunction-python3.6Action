@@ -8,64 +8,63 @@ The runtime is based on python3.6, older and newer versions are not supported.
 Default Python packages supported by the container
 
 **Setup modules**
-- gevent == 1.4.0
-- flask == 1.0.2
+gevent == 21.1.1
+flask == 1.1.2
 
-**default available packages for python3action**
-- beautifulsoup4 == 4.8.0
-- httplib2 == 0.13.0
-- kafka_python == 1.4.6
-- lxml == 4.3.4
-- python-dateutil == 2.8.0
-- requests == 2.22.0
-- scrapy == 1.6.0
-- simplejson == 3.16.0
-- virtualenv == 16.7.1
-- twisted == 20.3.0
-- paho-mqtt == 1.4.0
-- pynt==0.8.2
-- pytz==2020.1
+**default available packages for python3action
+beautifulsoup4 == 4.9.3
+httplib2 == 0.18.1
+lxml == 4.6.2
+python-dateutil == 2.8.1
+requests == 2.25.1
+scrapy == 2.4.1
+simplejson == 3.17.2
+twisted == 20.3.0
+paho-mqtt == 1.5.1
+pynt==0.8.2
+pytz
 
 **packages for numerics**
-- numpy == 1.16.4
-- scikit-learn == 0.20.3
-- scipy == 1.2.1
-- pandas == 0.24.2
+numpy == 1.19.5
+scikit-learn == 0.24.0
+scipy == 1.5.4
+pandas == 1.1.5
+matplotlib == 3.3.3
 
 **packages for image processing**
-- Pillow == 6.0.0
+Pillow == 8.1.0
 
-**IBM specific python modules**
-- ibm_db == 3.0.1
-- cloudant == 2.12.0
-- watson-developer-cloud == 2.8.1
-- ibm-cos-sdk == 2.5.1
-- ibmcloudsql == 0.2.23
+**Compose Libs
+psycopg2 == 2.8.6
+pymongo == 3.11.2
+redis == 3.5.3
+pika == 1.1.0
+elasticsearch == 7.10.1
+etcd3 == 0.12.0
 
-**Compose Libs**
-- psycopg2 == 2.8.2
-- pymongo == 3.8.0
-- redis == 3.2.1
-- pika == 1.0.1
-- elasticsearch == 6.3.1
-- cassandra-driver == 3.18.0
-- etcd3 == 0.10.0
+**Notification Packages**
+sentry-sdk==0.19.5
 
-**AWS specific modules**
-- boto3==1.10.29
-- botocore==1.13.29
+**AWS specific modules
+boto3==1.16.56
+botocore==1.19.56
 
 **Google Modules**
-- google-api-core == 1.19.0
-- dialogflow == 1.0.0
+google-api-core == 1.25.0
+dialogflow == 1.1.0
 
-**Crypto modules**
-- cryptography==2.9.1
+**Crypto module**
+cryptography==3.3.1
 
 **3rd party API management**
-- zeep==3.4.0
-- pyodbc==4.0.30
-- python-aqi==0.6.1
+zeep==4.0.0
+pyodbc==4.0.30
+python-aqi==0.6.1
+lunarcalendar==0.0.9
+convertdate==2.2.0
+holidays==0.10.4
+tqdm==4.56.0
+pystan==2.19.1.1
 
 ## Examples
 
