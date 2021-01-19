@@ -45,7 +45,7 @@ etcd3 == 0.12.0
 **Notification Packages**
 sentry-sdk==0.19.5
 
-**AWS specific modules
+**AWS specific modules**
 boto3==1.16.56
 botocore==1.19.56
 
