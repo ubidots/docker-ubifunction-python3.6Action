@@ -11,7 +11,7 @@ Default Python packages supported by the container
 gevent == 21.1.1
 flask == 1.1.2
 
-**default available packages for python3action
+**default available packages for python3action**
 beautifulsoup4 == 4.9.3
 httplib2 == 0.18.1
 lxml == 4.6.2
@@ -22,7 +22,7 @@ simplejson == 3.17.2
 twisted == 20.3.0
 paho-mqtt == 1.5.1
 pynt==0.8.2
-pytz
+pytz == 2020.5
 
 **packages for numerics**
 numpy == 1.19.5
@@ -30,11 +30,12 @@ scikit-learn == 0.24.0
 scipy == 1.5.4
 pandas == 1.1.5
 matplotlib == 3.3.3
+fbprophet == 0.7.1
 
 **packages for image processing**
 Pillow == 8.1.0
 
-**Compose Libs
+**Compose Libs**
 psycopg2 == 2.8.6
 pymongo == 3.11.2
 redis == 3.5.3
