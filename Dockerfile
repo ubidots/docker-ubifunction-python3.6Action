@@ -28,6 +28,7 @@ FROM python:3.6-stretch
 # Update packages and install mandatory dependences
 RUN apt-get update
 RUN apt-get install unixodbc-dev --yes
+RUN rm -rf /var/lib/apt/lists/*
 
 # Install common modules for python
 RUN pip install \
@@ -51,4 +52,5 @@ ENV OW_COMPILER=/bin/compile
 ENTRYPOINT []
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip setuptools six && pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir fbprophet==0.7.1 pytz==2020.5
 CMD ["/bin/proxy"]
