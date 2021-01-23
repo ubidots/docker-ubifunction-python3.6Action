@@ -141,7 +141,7 @@ while True:
         # Parse _parameters data and sent to script as an extra key inside args
         parsed_data = parse_to_json(__parameters)
         if parsed_data:
-            payload.update({"parameters": parsed_data})
+            payload.update({"_parameters": parsed_data})
 
         init_time = time.time()
         res = main(payload)
