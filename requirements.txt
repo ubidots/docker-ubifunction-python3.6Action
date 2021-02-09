@@ -58,4 +58,5 @@ convertdate==2.2.0
 holidays==0.10.4
 tqdm==4.56.0
 pystan==2.19.1.1
+firebase-admin==4.5.1
 
