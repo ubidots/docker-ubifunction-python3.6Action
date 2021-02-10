@@ -47,7 +47,7 @@ google-api-core == 1.25.0
 dialogflow == 1.1.0
 
 # Crypto module
-cryptography==3.3.1
+cryptography==3.3.2
 
 # 3rd party API management
 zeep==4.0.0
