@@ -31,6 +31,7 @@ scipy == 1.5.4
 pandas == 1.1.5
 matplotlib == 3.3.3
 fbprophet == 0.7.1
+arrow == 0.17
 
 **packages for image processing**
 Pillow == 8.1.0
