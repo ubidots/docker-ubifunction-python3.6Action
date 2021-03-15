@@ -63,7 +63,9 @@ def worker():
         except Exception as e:
             if __sentry_url is not None:
                 sentry_sdk.init(dsn=__sentry_url)
-                sentry_sdk.captureMessage("*UbiFunction Container Node:* \n{}".format(e))
+                sentry_sdk.captureMessage(
+                    "*UbiFunction Container Node:* \n{}".format(e)
+                )
         finally:
             q.task_done()
 
@@ -121,6 +123,8 @@ while True:
 
     res = {}
     try:
+        if payload.get("_ping") == "true":
+            raise RuntimeError("Ping function")
         __action_id = os.getenv("__OW_ACTION_NAME", "").split("adapter-")[-1]
         __report_url = payload.pop("reportUrl", None)
         __sentry_url = payload.pop("sentryUrl", None)
@@ -145,6 +149,8 @@ while True:
 
         init_time = time.time()
         res = main(payload)
+    except RuntimeError:
+        res = {"result": "pong"}
     except Exception as ex:
         print(traceback.format_exc(), file=stderr)
         res = {"error": str(ex)}

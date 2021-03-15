@@ -6,7 +6,7 @@ flask == 1.1.2
 
 # default available packages for python3action
 beautifulsoup4 == 4.9.3
-httplib2 == 0.18.1
+httplib2 == 0.19.0
 lxml == 4.6.2
 python-dateutil == 2.8.1
 requests == 2.25.1
@@ -48,7 +48,7 @@ google-api-core == 1.25.0
 dialogflow == 1.1.0
 
 # Crypto module
-cryptography==3.3.1
+cryptography==3.3.2
 
 # 3rd party API management
 zeep==4.0.0
