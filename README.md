@@ -50,7 +50,7 @@ Default Python packages supported by the container
 * elasticsearch == 7.10.1
 * etcd3 == 0.12.0
 
-## Notification Packages
+### Notification Packages
 
 * sentry-sdk==0.19.5
 
