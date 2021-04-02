@@ -30,6 +30,7 @@ Pillow == 8.1.0
 
 # Compose Libs
 psycopg2 == 2.8.6
+pymongo==3.11.3
 pymongo[srv]==3.11.3
 redis == 3.5.3
 pika == 1.1.0
