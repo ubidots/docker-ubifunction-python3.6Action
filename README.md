@@ -89,10 +89,10 @@ Write a simple function and save it as hello.py
 
 ```py
 def main(args):
-name = args.get("name", "stranger")
-greeting = "Hello " + name + "!"
-print(greeting)
-return {"greeting": greeting}
+    name = args.get("name", "stranger")
+    greeting = "Hello " + name + "!"
+    print(greeting)
+    return {"greeting": greeting}
 ```
 
 #### IBM Cloud Functions (based on Apache OpenWhisk)
