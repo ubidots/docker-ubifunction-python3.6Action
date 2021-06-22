@@ -61,7 +61,7 @@ Default Python packages supported by the container
 
 ### Google Modules
 
-* google-api-core == 1.25.0
+* google-api-core == 1.30.0
 * dialogflow == 1.1.0
 
 ### Crypto module
