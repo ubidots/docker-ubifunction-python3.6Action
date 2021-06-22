@@ -39,6 +39,7 @@ Default Python packages supported by the container
 ### Packages for image processing
 
 * Pillow == 8.1.0
+* pytesseract == 0.3.7
 
 ### Compose Libs
 
