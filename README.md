@@ -39,6 +39,7 @@ Default Python packages supported by the container
 ### Packages for image processing
 
 * Pillow == 8.1.0
+* pytesseract == 0.3.7
 
 ### Compose Libs
 
@@ -61,7 +62,7 @@ Default Python packages supported by the container
 
 ### Google Modules
 
-* google-api-core == 1.25.0
+* google-api-core == 1.30.0
 * dialogflow == 1.1.0
 
 ### Crypto module
