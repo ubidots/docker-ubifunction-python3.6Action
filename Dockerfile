@@ -23,11 +23,11 @@ RUN curl -L "$PROXY_SOURCE" | tar xzf - \
   && cd src/github.com/apache/incubator-openwhisk-runtime-go/main \
   && CGO_ENABLED=0 go build -o /bin/proxy
 
-FROM python:3.6-stretch
+FROM python:3.6-buster
 
 # Update packages and install mandatory dependences
 RUN apt-get update
-RUN apt-get install unixodbc-dev --yes
+RUN apt-get install unixodbc-dev tesseract-ocr --yes
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install common modules for python
