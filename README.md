@@ -26,6 +26,7 @@ Default Python packages supported by the container
 - paho-mqtt == 1.5.1
 - pynt==0.8.2
 - pytz == 2020.5
+- Js2Py == 0.71
 
 ### Packages for numerics
 

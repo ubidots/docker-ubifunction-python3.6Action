@@ -16,6 +16,8 @@ twisted == 20.3.0
 paho-mqtt == 1.5.1
 pynt==0.8.2
 pytz
+Js2Py == 0.71
+
 
 # packages for numerics
 numpy == 1.19.5
