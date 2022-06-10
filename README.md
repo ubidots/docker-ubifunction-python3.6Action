@@ -85,6 +85,7 @@ Default Python packages supported by the container
 - google-api-python-client==2.39.0
 - google-auth-httplib2==0.1.0
 - google-auth-oauthlib==0.5.0
+- stripe==3.3.0
 
 ## Examples
 
