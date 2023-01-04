@@ -28,7 +28,16 @@ FROM python:3.6-buster
 # Update packages and install mandatory dependences
 RUN apt-get update
 RUN apt-get install unixodbc-dev tesseract-ocr --yes
+RUN apt-get install python3-tk --yes
 RUN rm -rf /var/lib/apt/lists/*
+
+# Install Ghostscript
+ENV GHOSTSCRIPT_SOURCE=https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.gz
+RUN curl -L "$GHOSTSCRIPT_SOURCE" | tar xzf - \
+  && cd ghostscript-10.0.0 \
+  && ./configure \
+  && make install
+
 
 # Install common modules for python
 RUN pip install \

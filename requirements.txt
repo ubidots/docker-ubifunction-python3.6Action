@@ -1,7 +1,7 @@
 # Requirements.txt contains a list of dependencies for the Python Application #
 
 # Setup modules
-gevent == 21.1.1
+gevent == 21.1.2
 flask == 1.1.2
 
 # default available packages for python3action
@@ -17,7 +17,7 @@ paho-mqtt == 1.5.1
 pynt==0.8.2
 pytz
 Js2Py == 0.71
-
+camelot-py == 0.10.1
 
 # packages for numerics
 numpy == 1.19.5
