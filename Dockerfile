@@ -24,11 +24,14 @@ RUN curl -L "$PROXY_SOURCE" | tar xzf - \
   && CGO_ENABLED=0 go build -o /bin/proxy
 
 FROM python:3.6-buster
-
 # Update packages and install mandatory dependences
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - &&\
+    echo "deb [arch=amd64] https://packages.microsoft.com/ubuntu/21.10/prod impish main" | tee /etc/apt/sources.list.d/mssql-release.list
 RUN apt-get update
 RUN apt-get install unixodbc-dev tesseract-ocr --yes
 RUN apt-get install python3-tk --yes
+RUN apt-get install odbcinst 
+RUN ACCEPT_EULA=Y apt-get install -y msodbcsql18
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install Ghostscript
