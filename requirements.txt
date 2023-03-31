@@ -35,7 +35,7 @@ pytesseract==0.3.7
 psycopg2 == 2.9.1
 pymongo==3.11.3
 pymongo[srv]==3.11.3
-redis == 3.5.3
+redis == 4.4.4
 pika == 1.1.0
 elasticsearch == 7.10.1
 etcd3 == 0.12.0
